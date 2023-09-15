@@ -1,0 +1,20 @@
+<div class="signal__post-container" *ngIf="posts()">
+    <ng-container *ngFor="let post of posts()">
+        <mat-card class="my-2 signal-card">
+        <mat-card-header>
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-subtitle>
+                {{post.time |  date }}
+            </mat-card-subtitle>
+        </mat-card-header>
+
+
+           <mat-card-actions align="end">
+            <button mat-button >EDIT</button>
+            <button mat-button (click)="deletePost(post)">DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+        
+    </ng-container>
+</div>
+
