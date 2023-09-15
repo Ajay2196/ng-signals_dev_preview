@@ -11,6 +11,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class WritableSignalComponent implements OnInit{
 
   triggerSignal: Subject<any> = new Subject<any>();
+
   postsObsSignal = toSignal(this.getPosts());
   posts: WritableSignal<any> = signal(null);
   
@@ -39,8 +40,6 @@ export class WritableSignalComponent implements OnInit{
   }
 
     getPosts(): Observable<any>{
-      let param = new HttpParams();
-      param= param.append("category", "General");
       return this.httpSrv.get('http://localhost:3000/mockData').pipe(catchError(error=>{ return throwError(()=> error)}));
     }
   
