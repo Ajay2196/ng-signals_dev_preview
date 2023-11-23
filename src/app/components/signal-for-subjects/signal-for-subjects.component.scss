@@ -1,0 +1,22 @@
+.add-todo__container{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+
+    button{
+        height:55px;
+    }
+ 
+}
+.form-field{
+flex:1;
+margin-right:1rem;}
+
+.signal-card{
+    .edit__btn{
+        display:none;
+    }
+    &:hover .edit__btn{
+        display:block;
+    }
+}

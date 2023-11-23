@@ -1,0 +1,38 @@
+    <div class="add-todo__container">
+        <mat-form-field class="form-field">
+            <mat-label>Add To Do</mat-label>
+            <input matInput [(ngModel)]="toDoItem">
+            </mat-form-field>
+        <button mat-button  (click)="addToDo()" [disabled]="!toDoItem" >ADD</button>
+    </div>
+    <div *ngFor="let todo of allToDos()">
+
+            <mat-card class="my-2 signal-card" (mouseover)="showButton = true" (mouseleave)="showButton = false">
+            <mat-card-header>
+                <mat-card-title>
+                    <ng-container *ngIf="editItem === todo">
+                        <div class="add-todo__container">
+
+                        <mat-form-field class="form-field">
+                            <mat-label>Add To Do</mat-label>
+                            <input matInput [(ngModel)]="todo.name">
+                            </mat-form-field>
+                        <button mat-button  (click)="saveToDo(todo)" [disabled]="!todo.name" >Save</button>
+                        </div>
+                        </ng-container>
+                   <ng-container *ngIf="editItem !== todo">
+                       {{todo.name}}
+                   </ng-container>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{todo.description}}
+                </mat-card-subtitle>
+            </mat-card-header>
+    
+    
+               <mat-card-actions align="end" >
+                <button mat-button class="edit__btn" (click)="editToDo(todo)">EDIT</button>
+                <button mat-button (click)="deleteToDo(todo)">DELETE</button>
+              </mat-card-actions>
+              </mat-card>
+    </div>

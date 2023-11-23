@@ -1,0 +1,60 @@
+<div class="poke-container-flex" *ngIf="testSignal() as pokemons" >
+    <div class="flex-row  h-100">
+        <div class="flex-column poke-column w-40">
+            <div class="flex-column margin-auto">
+                <app-pokemon-card [pokemon]="pokemonCard()" [pokeTypes]="pokeTypes()"></app-pokemon-card>
+                   </div>
+        </div>
+        <div class="flex-column w-60 poke-column">
+            <div class="flex-row"  >
+                <a *ngFor="let pokemon of pokemons" (click)="selectPokemon(pokemon)">
+                    <mat-card class="my-2 poke-card" >
+                        <mat-card-header>
+                            <mat-card-title>
+                                {{pokemon?.name}}
+                            </mat-card-title>
+                        </mat-card-header>
+                        <!-- <mat-card-body> -->
+                        <img class="poke-img" [src]="pokemon?.sprites?.other['official-artwork']?.front_default">
+                        <!-- </mat-card-body> -->
+    
+                    </mat-card>
+                </a>
+                
+            </div>
+            <div class="btn-container"><button class="button__view-more" mat-raised-button color="primary"
+                    (click)="getNewPokeMons()"> Load More Pokemons</button></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="poke-container-flex">
+    <div class="flex-column margin-auto">
+        <app-pokemon-card [pokemon]="pokemonCard()" [pokeTypes]="pokeTypes()"></app-pokemon-card>
+           </div>
+
+    <div class="flex-row">
+        <div class="flex-column">
+            <div class="flex-row">
+                <ng-container *ngFor="let pokemon of allPokemons()">
+                    <mat-card class="my-2 poke-card" (click)="selectPokemon(pokemon)">
+                        <mat-card-header>
+                            <mat-card-title>
+                                {{pokemon.name | titlecase}}
+                            </mat-card-title>
+                        </mat-card-header>
+                        <img class="poke-img" [src]="pokemon.sprites.other['official-artwork'].front_default">
+    
+                    </mat-card>
+                </ng-container>
+                
+            </div>
+            <div class="btn-container"><button class="button__view-more" mat-raised-button color="primary"
+                    (click)="getNewPokeMons()"> Load More Pokemons</button></div>
+        </div>
+
+    </div>
+</div>
+ -->

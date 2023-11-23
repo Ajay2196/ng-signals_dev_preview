@@ -1,0 +1,48 @@
+<mat-card *ngIf="pokemon?.name else pokeballCard" class="my-2 pokemon__card {{poketypeBorder}}">
+    <mat-card-header>
+        <mat-card-title class="text-center pokemon__title">
+            {{pokemon.name | titlecase}}
+        </mat-card-title>
+    </mat-card-header>
+    <!-- <mat-card-body> -->
+
+
+    <mat-card-content>
+        <div class="img-bg bg--{{pokeType[0]?.type.name}}">
+            <img class="poke-img" [src]="pokemon?.sprites?.other['official-artwork'].front_default">
+        </div>
+
+        <div class="stats">
+            <div class="type">
+                <span class="type__badge bg--{{type.type.name}}" *ngFor=" let type of pokeType">
+                    {{type.type.name}}
+                </span>
+            </div>
+            <ng-container *ngFor=" let stat of pokemon.stats">
+                <div class="stat__row">
+                    <div class="stat__name">
+                        {{stat.stat.name | titlecase}} 
+                    </div> 
+                    <div class="stat__value" >
+                        {{stat.base_stat}}
+                    </div>
+                </div>
+
+            </ng-container>
+
+</div>
+
+    </mat-card-content>
+    <!-- </mat-card-body> -->
+</mat-card>
+
+<ng-template #pokeballCard>
+    <mat-card class="my-2 pokemon__card pokeball__card">
+
+        <mat-card-content class="poke-ball">
+               <pokeball></pokeball>
+    
+        </mat-card-content>
+        <!-- </mat-card-body> -->
+    </mat-card>
+</ng-template>

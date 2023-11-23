@@ -1,0 +1,149 @@
+.pokemon__card{
+    padding:1rem;
+    margin:1rem;
+    margin: auto;
+    width: 75%;
+}
+.poke-img{
+    max-width: 75%;
+    margin: auto;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.text-center{
+    text-align: center;
+}
+.img-bg{
+    display: flex;
+    background: #f3e7e7;
+    border-radius:82% 18% 62% 38% / 29% 60% 40% 71%;
+    filter: drop-shadow(2px 4px 6px black);
+
+}
+
+.pokemon__title{
+    padding:0.652rem;
+}
+
+span.type__badge {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid;
+    padding: 0 0.2rem 0 0.2rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    display: inline-flex;
+}
+
+.stats {
+    margin-top: 1rem;
+}
+
+
+.bg--grass {
+    background-color: #239e1f;
+}
+
+.bg--poison {
+    background-color: #7b1fa2;
+}
+
+.bg--fire {
+    background-color: #e5763f;
+}
+
+.bg--bug {
+    background-color: #0a5832;
+}
+
+.bg--normal {
+    background-color: #201b1b;
+}
+
+
+.bg--flying {
+    background-color: #788a8c;
+}
+
+.bg--water {
+    background-color: #1993d8;
+}
+
+.bg--electric {
+    background-color: #d39118;
+}
+
+.pokemon__card {
+    border: 0.5rem solid;
+    border-radius: 1.5rem;
+}
+
+.poke-card__border{
+&--grass {
+ border-color: #239e1f;
+}
+
+&--poison {
+ border-color: #7b1fa2;
+}
+
+&--fire {
+ border-color: #e5763f;
+}
+
+&--bug {
+ border-color: #0a5832;
+}
+
+&--normal {
+ border-color: #201b1b;
+}
+
+
+&--flying {
+ border-color: #788a8c;
+}
+
+&--water {
+ border-color: #1993d8;
+}
+
+&--electric {
+ border-color: #d39118;
+}
+
+}
+
+.stat__row {
+    display: flex;
+    flex-direction: row;
+}
+
+.stat__name {
+    display: flex;
+    text-transform: uppercase;
+    flex-basis: 100%;
+}
+
+.stat__value {
+    display: flex;
+    flex-basis: auto;
+    font-size: 1.2rem;
+}
+
+.stat__row:nth-child(2) {
+    margin-top:1rem;
+}
+.pokeball__card{
+    min-height: 27.75rem;
+    min-width: calc(14.34375rem + 48px);
+}
+.pokeball__card mat-card-content{
+    display: flex;
+    width: 192px;
+    padding: 0;
+    margin: auto;
+}
+.pokemon__card {
+    filter: drop-shadow(2px 4px 6px #000);
+}
